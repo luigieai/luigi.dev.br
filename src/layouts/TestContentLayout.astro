@@ -1,12 +1,11 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { SchemaTest } from "../content/config";
 
-interface Props {
-  nome: string;
-  lista: string[];
-  data: Date;
-}
+interface Props extends SchemaTest {}
+
 const {nome, lista, data} = Astro.props;
+
 ---
 
 <BaseLayout title={nome}>
