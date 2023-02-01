@@ -39,7 +39,7 @@ const last_posts = posts.slice(0, 3);
           title={post.data.title}
           img={post.data.heroImage}
           desc={post.data.description}
-          url={post.slug}
+          url={"/blog/post/" + post.slug}
           target="_self"
         />
         <div class="divider my-0"></div>
