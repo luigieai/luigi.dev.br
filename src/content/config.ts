@@ -7,19 +7,20 @@ const blogSchema = z.object({
     updatedDate : z.string().optional(),
     heroImage: z.string().optional(),
 });
-const testSchema = z.object({
-        nome: z.string(),
-        lista: z.array(z.string()),
-        data: z.string().transform(str => new Date(str)),
-    });
     
-export type SchemaTest = z.infer<typeof testSchema>;
+const experienceSchema = z.object({
+        title: z.string(),
+        company: z.string(), 
+        timeStart: z.coerce.date(),
+        timeEnd : z.coerce.date().optional(),
+    });
 export type BlogSchema = z.infer<typeof blogSchema>;
+export type ExperienceSchema = z.infer<typeof experienceSchema>;
 
-const testCollection = defineCollection( { schema : testSchema } ) ;
 const blogCollection = defineCollection( { schema : blogSchema } ) ;
+const experienceCollection = defineCollection( { schema : experienceSchema } ) ;
 
 export const collections = {
     'blog' : blogCollection,
-    'test' : testCollection,
+    'experience' : experienceCollection, 
 }

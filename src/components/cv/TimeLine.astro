@@ -1,5 +1,23 @@
 ---
-const { title, subtitle, desc } = Astro.props;
+
+
+const { title, timeStart, timeEnd, company, desc } = Astro.props;
+
+function formatTime(timeStart, timeEnd) {
+
+  let formatOptions : Intl.DateTimeFormatOptions = {
+    month: 'short',
+    year: 'numeric'
+  }
+  let formattedStart = new Date(timeStart).toLocaleDateString('en-US', formatOptions);
+  if(!timeEnd) {
+    return formattedStart + " - Present";
+  }
+  let formattedEnd = new Date(timeEnd).toLocaleDateString('en-US', formatOptions);
+  return formattedStart + " - " + formattedEnd;
+}
+const time = formatTime(timeStart, timeEnd);
+
 ---
 
 <div class="flex">
@@ -9,7 +27,9 @@ const { title, subtitle, desc } = Astro.props;
   </div>
   <div class="experience__data bd-grid px-5">
     <h3 class="font-semibold mb-1">{title}</h3>
-    <span class="font-light text-sm">{subtitle}</span>
+    <span class="font-semibold text-sm">{time}</span>
+    <br/>
+    <span class="font-semibold text-sm">{company}</span>
     <p class="my-2 text-justify">
       {desc}
     </p>
