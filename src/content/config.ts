@@ -23,4 +23,5 @@ const experienceCollection = defineCollection( { schema : experienceSchema } ) ;
 export const collections = {
     'blog' : blogCollection,
     'experience' : experienceCollection, 
+    'education' : experienceCollection, //yes, same schema
 }
