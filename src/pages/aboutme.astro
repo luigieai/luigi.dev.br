@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogImage from "../components/BlogImage.astro";
+import first_tattoo from "../images/firsttattoo.jpg";
+import portalcoop from "../images/Portal2PCoop.jpg";
+---
+
+<BaseLayout>
+    <div class="pb-12 mt-5">
+        <div class="text-5xl font-bold">About me</div>
+    </div>
+    <div class="text-3xl py-3 font-bold">It's me! Luigi!</div>
+    <div class="py-2">
+        <text class="text-lg">
+          Hello, I'm Luigi! I have 23 years old, I currently work with Devops Engineering, I love gaming and I always try to learn about new tech,
+          I speak Portuguese and English (though is not my primary language). When I'm meeting someone new, I always expect to hear a joke with my name!
+          <br/>
+          <br/>
+          At least here in Brazil, Super Mario Bros was (and still is) a popular videogame series, and Luigi is not a common name over here, so i'm used to hear joke
+          about my name and the game series <i>hey Luigi, where's Mario?</i>, I'll be honest here, I do not avoid this joke, in fact my first tattoo is a life mushroom from the game,
+          my favorite color is green (and I don't hide it). To be perfect honest, I even have a Luigi's hat! 
+          <BlogImage description="My life mushroom tattoo, inspired by Super Mario Bros. And a cat!" src={first_tattoo} width={250}/>
+          It's always hard to describe yourself (and any human), So I'll try to give some first impressions, I'm frequently stereotyped as a nerdy 
+          type of person, or a person who has always a bad mood and is closed off... Well.. Actually I can be pretty nerdy, but I'm not closed off
+          as people usually think, I'm just a bit introverted with strangers but after some minutes chatting with me you'll notice that I
+          talks a lot.
+          <br/>
+          <br/>
+          One of the reasons my website has all my social media and a <b><a href="/blog">blog</a></b> is because I like to talk about a lot of things in my life. 
+          Maybe if you like (or not) what I'm talking about, we can discuss it further (or talk about any subject =D).
+          <br/>
+          <br/>
+          If you wanna know more about my work in tech, you can start at my <b><a href="/cv">CV</a></b>, where I describe more about myself, but tech
+          can be my hobby aswell, as primarily infrastructure engineer, at my free time I like to learn more about programming and creating new things, this 
+          own website is developed by myself forking <b><a href="https://github.com/manuelernestog/astro-modern-personal-website">Ernesto's template</a></b>
+          Also I love gaming, my favorite game is Counter Strike where I have tons of hours played and being a little competitive about the game, I even try to
+          participate in some local tournaments and I'm always studying the game to become a better player and to help my friends and I to become a better team. 
+          I play another games and genres aswell, in recent times Cyberpunk 2077 took a lot of my time, but I stick with Portal 2 as my favorite singleplayer game.
+          <BlogImage description="Characters of coop mode in portal 2, where I share great memories playing with my best friend!" src={portalcoop} width={400}/>
+          Outside tech, I consideer myself a simple person, São Paulo can be a big city so It's never really get boring in terms to entreteniment, and I'm fortunely to have 
+          friends that live here aswell, so you can always meet be at a Pub or similar place getting some beers and drinks or at a party sometimes, or even eating some Japanese food. 
+          Usually I have one rule for a relationship (any kind): Just don't be an asshole! Myself I'm cis, white and straight, but mostly of my friends are from LGBTQIA+ community 
+          So I don't tolerate anyone that is against diversity or try to harm my friends just because of who they are.
+          <br/>
+          I love listening to eletronic music, Riddim Dubstep is my favorite genre at moment but i'm always listening to something new. I also listen to rap, pop, rock and more, I don't stick
+          with one music genre as sometimes my mood decides what I want to hear in the moment, as I work from home and always at computer, I'm always listening to something trying to focus or only
+          to getting chills vibe at stress moments, well, I'm listening right now <b><a href="https://youtu.be/8UVNT4wvIGY">Gotye - Somebody That I Used To Know</a></b> while I'm writing :)
+          <br/>
+          Want to know more about me? Reach me at any social media provided in my webiste, I'm always open to talk with someone! 
+        </text>
+      </div>
+</BaseLayout>
