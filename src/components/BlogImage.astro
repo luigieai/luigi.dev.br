@@ -1,0 +1,12 @@
+---
+import { Image } from '@astrojs/image/components';
+
+const { src, description, width } = Astro.props;
+---
+
+<div class="hero bg-base-100">
+    <div class="hero-content flex-col">
+      <Image alt={description} src={src} format='jpg' width={width ? width : 250} /> 
+      <p class="text-base italic" >{description}</p>
+    </div>
+  </div>  
