@@ -5,6 +5,8 @@ import BaseLayout from "./BaseLayout.astro";
 export interface Props extends BlogSchema {}
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+let formattedPubDate = `Posted: ${pubDate.getMonth()}/${pubDate.getDay()}/${pubDate.getFullYear()}`
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -12,7 +14,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
       <h1 class="title my-2 text-4xl font-bold">{title}</h1>
-      {pubDate && <time>{pubDate}</time>}
+      {pubDate && <time>{formattedPubDate}</time>}
       {
         updatedDate && (
           <div>
