@@ -1,7 +1,7 @@
 ---
 title: "Praticing english & being introvert"
 description: "My thoughts about learning and praticing english being a introvert person."
-pubDate: "Apr 4 2023"
+pubDate: "Apr 04 2023"
 heroImage: "/post_img.webp"
 ---
 
