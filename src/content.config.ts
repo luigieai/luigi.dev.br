@@ -1,4 +1,5 @@
 import { z, defineCollection } from "astro:content";
+import { glob } from 'astro/loaders';
 
 const blogSchema = z.object({
     title: z.string(),
@@ -17,11 +18,12 @@ const experienceSchema = z.object({
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type ExperienceSchema = z.infer<typeof experienceSchema>;
 
-const blogCollection = defineCollection( { schema : blogSchema } ) ;
-const experienceCollection = defineCollection( { schema : experienceSchema } ) ;
+const blogCollection = defineCollection( { schema : blogSchema, loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/blog" }) } ) ;
+const experienceCollection = defineCollection( { schema : experienceSchema, loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/experience" }) } ) ;
+const educationCollection = defineCollection( { schema : experienceSchema, loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/education" }) } ) ;
 
 export const collections = {
     'blog' : blogCollection,
     'experience' : experienceCollection, 
-    'education' : experienceCollection, //yes, same schema
+    'education' : educationCollection,
 }
