@@ -1,37 +1,58 @@
-content:
-  - name: blog
-    path: src/content/blog
-    url: /blog/posts
-    fields:
-      title:
-        type: string
-        required: true
-      description:
-        type: string
-        required: true
-      pubDate:
-        type: date
-        required: true
-      heroImage:
-        type: string
-        required: false
-      updatedDate:
-        type: date
-        required: false
-
 media:
-  path: public
-  url: /
-  allowed_extensions:
-    - png
-    - jpg
-    - jpeg
-    - gif
-    - webp
-    - svg
-    - ico
-  max_file_size: 5MB
-  image_sizes:
-    - 640
-    - 1280
-    - 1920
+  input: public
+  output: /
+  extensions: [png, jpg, jpeg, gif, webp, svg, ico]
+
+content:
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: src/content/blog
+    icon: file-text
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      
+      - name: description
+        label: Description
+        type: text
+        required: true
+      
+      - name: pubDate
+        label: Publication Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      
+      - name: updatedDate
+        label: Last Updated
+        type: date
+        options:
+          format: yyyy-MM-dd
+      
+      - name: heroImage
+        label: Hero Image
+        type: image
+        options:
+          path: public
+          extensions: [png, jpg, jpeg, gif, webp, svg]
+      
+      - name: body
+        label: Content
+        type: rich-text
+        options:
+          format: markdown
+          image:
+            path: public
+            extensions: [png, jpg, jpeg, gif, webp, svg]
+
+    view:
+      fields: [title, pubDate, updatedDate]
+      primary: title
+      sort: [pubDate, title]
+      default:
+        sort: pubDate
+        order: desc
