@@ -1,0 +1,37 @@
+content:
+  - name: blog
+    path: src/content/blog
+    url: /blog/posts
+    fields:
+      title:
+        type: string
+        required: true
+      description:
+        type: string
+        required: true
+      pubDate:
+        type: date
+        required: true
+      heroImage:
+        type: string
+        required: false
+      updatedDate:
+        type: date
+        required: false
+
+media:
+  path: public
+  url: /
+  allowed_extensions:
+    - png
+    - jpg
+    - jpeg
+    - gif
+    - webp
+    - svg
+    - ico
+  max_file_size: 5MB
+  image_sizes:
+    - 640
+    - 1280
+    - 1920
