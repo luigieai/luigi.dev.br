@@ -3,11 +3,9 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
-import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://luigi.dev.br',
-  integrations: [mdx(), sitemap(), tailwind(), image()]
+  integrations: [mdx(), sitemap(), tailwind(),]
 });

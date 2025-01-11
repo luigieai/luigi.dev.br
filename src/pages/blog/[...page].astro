@@ -27,7 +27,7 @@ const { page } : Props = Astro.props;
         title={post.data.title}
         img={post.data.heroImage}
         desc={post.data.description}
-        url={"/blog/posts/" + post.slug}
+        url={"/blog/posts/" + post.id}
 		target="_self"
       />
 	  <div class="divider my-0"></div>
