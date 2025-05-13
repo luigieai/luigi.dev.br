@@ -21,6 +21,9 @@ jobs:
 
   deploy:
     needs: build
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-22.04
     environment:
       name: github-pages
